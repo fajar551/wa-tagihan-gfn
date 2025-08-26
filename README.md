@@ -39,14 +39,14 @@ Response:
   "code": 200,
   "data": {
     "serverIP": "192.168.1.100",
-    "port": 5568,
-    "baseURL": "http://192.168.1.100:5568",
+    "port": 5570,
+    "baseURL": "http://192.168.1.100:5570",
     "endpoints": {
-      "connect": "http://192.168.1.100:5568/connect/1",
-      "qrImage": "http://192.168.1.100:5568/qr-image/1",
-      "status": "http://192.168.1.100:5568/status/1",
-      "send": "http://192.168.1.100:5568/send?phone=628123456789&text=Hello",
-      "sendDirect": "http://192.168.1.100:5568/test-send/628123456789/Hello"
+      "connect": "http://192.168.1.100:5570/connect/1",
+      "qrImage": "http://192.168.1.100:5570/qr-image/1",
+      "status": "http://192.168.1.100:5570/status/1",
+      "send": "http://192.168.1.100:5570/send?phone=628123456789&text=Hello",
+      "sendDirect": "http://192.168.1.100:5570/test-send/628123456789/Hello"
     }
   }
 }
@@ -112,20 +112,20 @@ GET /send?phone=628123456789&text=Hello World
 ### **1. Scan QR Code**
 
 1. Buka browser di HP
-2. Kunjungi: `http://[IP_SERVER]:5568/qr-image/1`
+2. Kunjungi: `http://[IP_SERVER]:5570/qr-image/1`
 3. QR code akan muncul sebagai gambar
 4. Scan dengan WhatsApp
 
 ### **2. Kirim Pesan dari HP**
 
 ```
-http://[IP_SERVER]:5568/test-send/6282130697168/Test%20dari%20HP
+http://[IP_SERVER]:5570/test-send/6282130697168/Test%20dari%20HP
 ```
 
 ### **3. Cek Status dari HP**
 
 ```
-http://[IP_SERVER]:5568/status/1
+http://[IP_SERVER]:5570/status/1
 ```
 
 ## 🔧 **Keunggulan Headless Mode:**
@@ -154,17 +154,17 @@ http://[IP_SERVER]:5568/status/1
 
 ```bash
 # Cek firewall
-netsh advfirewall firewall add rule name="WhatsApp API" dir=in action=allow protocol=TCP localport=5568
+netsh advfirewall firewall add rule name="WhatsApp API" dir=in action=allow protocol=TCP localport=5570
 
 # Cek port
-netstat -an | findstr 5568
+netstat -an | findstr 5570
 ```
 
 ### **Reset Session**
 
 ```bash
-curl http://[IP_SERVER]:5568/reset
-curl http://[IP_SERVER]:5568/connect/1
+curl http://[IP_SERVER]:5570/reset
+curl http://[IP_SERVER]:5570/connect/1
 ```
 
 ### **Cek Log Server**
@@ -200,23 +200,23 @@ node server.js
 
 ```
 # Cek info server
-http://192.168.1.100:5568/server-info
+http://192.168.1.100:5570/server-info
 
 # Scan QR code
-http://192.168.1.100:5568/qr-image/1
+http://192.168.1.100:5570/qr-image/1
 
 # Kirim pesan
-http://192.168.1.100:5568/test-send/6282130697168/Hello%20World
+http://192.168.1.100:5570/test-send/6282130697168/Hello%20World
 ```
 
 ### **Dari Komputer:**
 
 ```bash
 # Cek status
-curl http://192.168.1.100:5568/status/1
+curl http://192.168.1.100:5570/status/1
 
 # Kirim pesan
-curl "http://192.168.1.100:5568/test-send/6282130697168/Test%20pesan"
+curl "http://192.168.1.100:5570/test-send/6282130697168/Test%20pesan"
 ```
 
 **Sekarang WhatsApp Web API Anda bisa diakses dari mana saja dan tetap berfungsi meskipun browser ditutup!** 🚀

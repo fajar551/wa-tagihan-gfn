@@ -30,22 +30,22 @@ async function restartAndTest() {
 
     // Test connection
     console.log('Testing connection...');
-    const connect = await axios.get('http://localhost:5568/connect/1');
+    const connect = await axios.get('http://localhost:5570/connect/1');
     console.log('Connect:', connect.data);
 
     // Wait 10 seconds
     await new Promise(resolve => setTimeout(resolve, 10000));
 
     // Check status
-    const status = await axios.get('http://localhost:5568/status/1');
+    const status = await axios.get('http://localhost:5570/status/1');
     console.log('Status:', status.data);
 
     // Manual ready
-    const manual = await axios.get('http://localhost:5568/manual-ready/1');
+    const manual = await axios.get('http://localhost:5570/manual-ready/1');
     console.log('Manual ready:', manual.data);
 
     // Send message
-    const send = await axios.get('http://localhost:5568/send', {
+    const send = await axios.get('http://localhost:5570/send', {
       params: {
         phone: '6282130697168',
         text: 'Test setelah restart'

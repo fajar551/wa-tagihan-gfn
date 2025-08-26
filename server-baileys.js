@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5568
+const port = 5570
 
 const fs = require('fs');
 const { default: makeWASocket, DisconnectReason, useMultiFileAuthState } = require('@whiskeysockets/baileys');

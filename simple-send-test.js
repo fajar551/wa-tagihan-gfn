@@ -5,7 +5,7 @@ async function simpleSendTest() {
     console.log('Simple send test...');
 
     // Connect
-    const connect = await axios.get('http://localhost:5568/connect/1');
+    const connect = await axios.get('http://localhost:5570/connect/1');
     console.log('Connect:', connect.data);
 
     // Wait 15 seconds for browser to load
@@ -13,12 +13,12 @@ async function simpleSendTest() {
     await new Promise(resolve => setTimeout(resolve, 15000));
 
     // Manual ready
-    const manual = await axios.get('http://localhost:5568/manual-ready/1');
+    const manual = await axios.get('http://localhost:5570/manual-ready/1');
     console.log('Manual ready:', manual.data);
 
     // Test send dengan endpoint sederhana
     console.log('Testing simple send...');
-    const send = await axios.get('http://localhost:5568/test-send/6282130697168/Test%20pesan%20sederhana');
+    const send = await axios.get('http://localhost:5570/test-send/6282130697168/Test%20pesan%20sederhana');
     console.log('Send result:', send.data);
 
   } catch (error) {
